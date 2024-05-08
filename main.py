@@ -4,9 +4,9 @@ import train
 
 st.title("AI on Replit")
 
-file1 = uploaded_file = st.file_uploader("Charger un fichier .txt", type=["txt"])
+file1 = uploaded_file = st.file_uploader("Charger un fichier x .txt", type=["txt"])
  #"maman\ngentil\nimbecile\ndebile"
-file2 = uploaded_file = st.file_uploader("Charger un fichier .txt", type=["txt"])
+file2 = uploaded_file = st.file_uploader("Charger un fichier y .txt", type=["txt"])
 #"neutre\nneutre\nvulgaire\nvulgaire"
 
 epochs = st.slider(label="Epochs", min_value=1, max_value=100, value=10)
