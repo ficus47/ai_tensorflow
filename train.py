@@ -26,7 +26,8 @@ def train(file1, file2, epochs:int, learning_rate:float):
   x, y = pad_sequences(x, maxlen=maxlen), pad_sequences(y, maxlen=maxlen)
   
   model = models.Sequential()
-  model.add(layers.Embedding(len(tokenizer.word_index)+1, 64))
+  model.add(layers.Embedding(len(tokenizer.word_index)+1, 32))
+  model.add(layers.Bidirectional(layers.LSTM(64, return_sequences=True)))
   model.add(layers.Bidirectional(layers.LSTM(64)))
   model.add(layers.Dense(maxlen, activation='softmax'))
 
