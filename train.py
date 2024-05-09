@@ -28,7 +28,6 @@ def train(file1, file2, epochs:int, learning_rate:float):
   model = models.Sequential()
   model.add(layers.Embedding(len(tokenizer.word_index)+1, 64))
   model.add(layers.Bidirectional(layers.LSTM(64)))
-  model.add(layers.Dense(64, activation='relu'))
   model.add(layers.Dense(maxlen, activation='softmax'))
 
   model.compile(loss="categorical_crossentropy",     
